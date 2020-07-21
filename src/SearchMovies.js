@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MovieCard from "./MovieCard";
+import apikey from "./apikey";
 
 function SearchMovies() {
   const [query, setQuery] = useState("");
@@ -8,7 +9,7 @@ function SearchMovies() {
   const search = async (e) => {
     e.preventDefault();
 
-    let url = `https://api.themoviedb.org/3/search/movie?api_key=2e8dc3bec89e9bcc169cfcabbaa16316&language=en-US&query=${query}&page=1&include_adult=false`;
+    let url = `https://api.themoviedb.org/3/search/movie?api_key=${apikey.themoviedb}&language=en-US&query=${query}&page=1&include_adult=false`;
 
     try {
       const res = await fetch(url);
